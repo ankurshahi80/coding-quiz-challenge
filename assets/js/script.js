@@ -17,6 +17,7 @@ var headerEl = document.getElementById("header");
 var goBackBtnEl = document.getElementById("go-back-btn");
 var clearHighScoreBtnEl = document.getElementById("clear-high-score-btn");
 
+// Array to store high scores
 var storeScore = [];
 
 // Array to store quiz questions
@@ -87,6 +88,7 @@ var startQuiz = function() {
     
 };
 
+// countdown timer
 function startTimer () {
     timeInterval = setInterval(function() {
         if (timeLeft>=1) {
@@ -103,6 +105,7 @@ var getNextQuestion = function() {
     showQuestion(quizQuestions[questionIndex]);
 }
 
+// Function to display one question at a time
 var showQuestion = function (question) {
     
     // display question
@@ -126,6 +129,7 @@ var showQuestion = function (question) {
     };
 }
 
+// Function to validate the answer
 var selectAnswer = function(event) {
     var selBtn = event.target;
     var correct = selBtn.getAttribute("correct");
@@ -148,16 +152,18 @@ var selectAnswer = function(event) {
     }
     
 }
-
+// function to delete the existing question before showing the next question
 var deleteCurrentQuestion = function() {
     questionEl.innerHTML="";
 }
 
+// funtion to display the result
 var displayResult = function(){
     resultScreenEl.className="show";
     scoreEl.innerHTML=timeLeft;
 }
 
+// function to save the final score in the local storage
 var saveScore = function () {
     var highScore = timeLeft;
     var userName = initialInput.value;
@@ -179,6 +185,7 @@ var saveScore = function () {
     renderHighScores();
 }
 
+// function to show the high scores
 var renderHighScores = function() {
 
     resultScreenEl.className="hide";
@@ -195,6 +202,7 @@ var renderHighScores = function() {
     };
 }
 
+// function to go back and try again
 var reset = function() {
     timeLeft = 75;
     printHighScoreSecEl.className="hide";
@@ -202,12 +210,20 @@ var reset = function() {
     startQuiz();
 }
 
+// function to clear the local storage
 var clearScore=function() {
     localStorage.setItem("score","");
 }
 
+// start quiz
 startBtnEl.addEventListener("click",startQuiz);
+
+// save and show high scores
 storeScoreBtnEl.addEventListener("click",saveScore);
+
+// go back to take the quiz
 goBackBtnEl.addEventListener("click",reset);
+
+// clear high score
 clearHighScoreBtnEl.addEventListener("click", clearScore);
 
