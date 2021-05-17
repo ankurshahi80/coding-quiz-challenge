@@ -9,10 +9,14 @@
 </head>
 
 <body>
+    <!-- Start header -->
     <header id="header">
-        <p style="display: inline-block; color: violet;">View high score</p>
-        <p style="float: right;">Time:<span id="timer"> 0</span></p>
+        <p id="show-high-score" >View high score</p>
+        <p id="show-time-remaining">Time:<span id="timer"> 0</span></p>
     </header>
+    <!-- End header -->
+
+    <!-- Start Main Page -->
     <main id="start-page">
         <h1>Coding Quiz Challenge</h1>
         <p>
@@ -20,11 +24,16 @@
         </p>
         
         <button class="btn" id="start-quiz" type="submit">Start Quiz</button>
-    </main> 
-    <section class="question-wrapper" id="question">
-        
-    </section>
+    </main>
+    <!-- End Main Page  -->
 
+    <!-- Start Quiz -->
+    <section class="question-wrapper" id="question">
+        <!-- the questions and the options will be dynamically genereated here -->
+    </section>
+    <!-- End Quiz -->
+
+    <!-- Start Result Screen -->
     <section id="result-screen" class="hide">
         <div class = "question-wrapper">
             <h2>All Done!</h2>
@@ -39,11 +48,12 @@
                     id="initials" 
                 />
                 <button class="btn" id="submit-score-btn">Submit</button> 
-            </div>
-            
+            </div> 
         </div>
     </section>
+    <!-- End Result Screen -->
 
+    <!-- Start Score Section -->
     <section id="show-high-scores" class="hide">
         <div class = "high-score question-wrapper">
             <h2>High Scores</h2>
@@ -54,13 +64,17 @@
             <button class="btn" id=clear-high-score-btn>Clear High Scores</button>
         </div>
     </section>
-    
+    <!-- End Score Section -->
+
+    <!-- Start Footer Here -->
+    <!-- Provides Answer Feedback -->
     <footer id="feedback-info" class="hide">
         <div class="feedback">
             <h2 id="feedback-text"></h2>
         </div>
     </footer>
-           
+    <!-- End Footer Here  -->
+    
     <script src="./assets/js/script.js"></script>
 </body>
 </html>
