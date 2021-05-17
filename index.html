@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>JavaScript Quiz</title>
+</head>
+
+<body>
+    <header id="header">
+        <p style="display: inline-block; color: violet;">View high score</p>
+        <p style="float: right;">Time:<span id="timer"> 0</span></p>
+    </header>
+    <main id="start-page">
+        <h1>Coding Quiz Challenge</h1>
+        <p>
+            Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 10 seconds!
+        </p>
+        
+        <button class="btn" id="start-quiz" type="submit">Start Quiz</button>
+    </main> 
+    <section class="question-wrapper" id="question">
+        
+    </section>
+
+    <section id="result-screen" class="hide">
+        <div class = "question-wrapper">
+            <h2>All Done!</h2>
+        </div>
+        <div class ="question-wrapper">
+            <p>Your final score is: <span id=score></span><p>
+            <div class="input-initial">
+                <label for="initials">Enter Initials: </label> 
+                <input 
+                    type="text" 
+                    name ="initials" 
+                    id="initials" 
+                />
+                <button class="btn" id="submit-score-btn">Submit</button> 
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="show-high-scores" class="hide">
+        <div class = "high-score question-wrapper">
+            <h2>High Scores</h2>
+            <ul class="high-score-list" id="high-score-recall"></ul>
+        </div>
+        <div class= "question-wrapper">
+            <button class="btn" id=go-back-btn>Go Back</button>
+            <button class="btn" id=clear-high-score-btn>Clear High Scores</button>
+        </div>
+    </section>
+    
+    <footer id="feedback-info" class="hide">
+        <div class="feedback">
+            <h2 id="feedback-text"></h2>
+        </div>
+    </footer>
+           
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
